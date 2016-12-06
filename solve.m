@@ -1,0 +1,1 @@
+function r = solve(m, b)  n = rows(m);  assert (columns(m) == n, "not a square matrix");  full = triangulate ([m b]);  r = solveupper (full(:, 1:n), full(:, n+1:n+1));endfunction%!assert (abs (solve ([0.1, 0.2, 0.3; 0, 0.1, 0.2; 0, 0, 0.1], [0.1; 0.04; 0.01]) - [0.3; 0.2; 0.1]) < 0.001)
